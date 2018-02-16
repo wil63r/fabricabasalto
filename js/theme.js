@@ -374,17 +374,6 @@ $(function () {
     });
 
 
-
-    ///////////////////////////////////////////////////////////////////////////////////////
-    // YTPlayer (Background Youtube video): https://github.com/pupunzi/jquery.mb.YTPlayer
-    ///////////////////////////////////////////////////////////////////////////////////////
-
-    $(function () {
-        if (!jQuery.browser.mobile)
-            $(".youtube-bg").mb_YTPlayer();
-    });
-
-
     ////////////////////////////////////////////////////////////////////
     // OWL Carousel (more info: http://www.owlcarousel.owlgraphic.com)
     ////////////////////////////////////////////////////////////////////
@@ -526,31 +515,6 @@ $(function () {
         }
     });
 });
-
-
-//////////////////////////////////////////////////////////////////////////////////////////////////
-//
-// Deferring embed videos (Youtube, Vimeo).
-// 
-// When you have videos from Youtube, Vimeo or just about any other provider embedded 
-// in your webpages it causes your page to load slower. Just about every video can be deferred 
-// until after your initial pageload which will allow your page to load quickly 
-// without having to gather all the files and resources that the video is requesting.
-//
-// More info: https://www.feedthebot.com/pagespeed/defer-videos.html
-//
-//////////////////////////////////////////////////////////////////////////////////////////////////
-
-function init() {
-    var vidDefer = document.getElementsByTagName('iframe');
-    for (var i = 0; i < vidDefer.length; i++) {
-        if (vidDefer[i].getAttribute('data-src')) {
-            vidDefer[i].setAttribute('src', vidDefer[i].getAttribute('data-src'));
-        }
-    }
-}
-window.onload = init;
-
 
 ///////////////////////////////////////////////////////////////////
 // Magnific Popup: http://dimsemenov.com/plugins/magnific-popup/
